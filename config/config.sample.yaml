@@ -1,0 +1,20 @@
+log_opt:
+  # debug/info/warn/error
+  level: debug
+  filename: ./logs/baize-api.log
+  # console/json
+  encoder: json
+service_opt:
+  dogs_vs_cats_service_opt:
+    endpoint: <aliyun oss endpoint>
+    bucket: <your bucket name>
+    access_key_id: <your access key id>
+    access_key_secret: <your access key secret>
+    region_id: <aliyun region id>
+    role_arn: <aliyun role arn, use by sts>
+    role_session_name: <role session name>
+    upload_path_prefix: <upload path prefix>
+    classify_path_prefix: <classify path prefix>
+    model_path: <model path>
+provider_opt:
+  dogs_vs_cats_provider_opt:

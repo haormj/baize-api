@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package dogsvscats;
+option go_package = "idl/dogsvscats";
+
+service DogsVsCatsService {
+        rpc GetUploadParam(GetUploadParamInput) returns (GetUploadParamOutput) {}
+        rpc Classify(ClassifyInput) returns (ClassifyOutput) {}
+}
+
+message GetUploadParamInput {
+}
+
+message GetUploadParamOutput {
+        string region_id = 1;
+        string bucket = 2;
+        string access_key_id = 3;
+        string access_key_secret = 4;
+        string security_token = 5;
+        string expiration = 6;
+        string object_key = 7;
+}
+
+message ClassifyInput {
+        string object_key = 1;
+}
+
+message ClassifyOutput {
+        string result = 1;
+        string image_url = 2;
+}
+
